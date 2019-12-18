@@ -38,8 +38,9 @@ CREATE TABLE limits_per_hour (
 Запускаем SparJob. 
 Исполняемый jar файл SparkJob также находится в папке out. В качестве аргумента можно задать количество сообщений.
 ```
-  sudo ./bin/spark-submit
-  SparkJob.jar localhost:9092 test_bd User Pass
+  spark-submit --class org.example.Main \
+> /out/artifacts/SparkJob_jar/SparkJob.jar \
+> localhost:9092 test_db USER PASS
 ``` 
 В качестве аргументов нужно задать host:port(или же "-" для учета всего трафика), имя БД, пользователя и пароль в БД.
 
